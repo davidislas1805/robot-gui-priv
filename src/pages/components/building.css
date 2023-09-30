@@ -1,0 +1,19 @@
+.alux-loader{
+    height: 180px;
+    width: 180px;
+    background: url('./Icons/Alux.svg') no-repeat right;
+    background-color: transparent;
+    background-size: 100%;
+    border-width: 0px;
+    border-radius: 90px;
+    animation: alux-spin 4s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes alux-spin {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(90deg); background: url('./Icons/Alux_on.svg') no-repeat right; }
+    50% { transform: rotate(180deg); background: url('./Icons/Alux.svg') no-repeat right; }
+    75% { transform: rotate(270deg); background: url('./Icons/Alux_on.svg') no-repeat right; }
+    100% { transform: rotate(360deg); background: url('./Icons/Alux.svg') no-repeat right;}
+};
