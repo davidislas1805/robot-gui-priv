@@ -1,0 +1,203 @@
+:root {
+    --rgbStrokeColor: gray;
+    --left-panel: #111; 
+    --bottom-panel: #111; 
+    --div-wrapper-title: #D9DAD9;
+    --div-wrapper: linear-gradient(90deg, #7E7E7E 0%, #E3E3E3 25%, #787878 50%, #E3E3E3 75%, #7E7E7E 100%); 
+    --rectBox-Background: #7F8A9C; 
+    --text-color: white;
+    --rectBox-Text: black;
+
+    /* Mode Tab colors */
+    --Mode-tab: #ECCE8E;
+    --Mode-container: white;
+
+    /* Buttons colors */
+    --Button-color: linear-gradient(45deg, var(--left-panel) 0%, #DBCF96 50%, var(--left-panel) 100%);/*#DBCF96;*/ 
+    --Button-color-hover: linear-gradient(45deg, var(--left-panel) 0%, rgb(219, 207, 150, 0.7), rgb(219, 207, 150, 0.7) 50%, rgb(219, 207, 150, 0.7) 75%, var(--left-panel) 100%);
+
+    /* Data container colors */
+    --Data-container-style1: #ECCE8E;
+
+    /* Slider Colors */
+    --sliderWrapper: #ECCE8E;
+    --defaultTrackColor: white; 
+    --trackBeforeThumb: rgb(219, 207, 150, 0.7); 
+    --thumbColor: rgb(219, 207, 150, .95);
+    --thumbColorHover: rgb(219, 207, 150, .5);
+    --markBefore: #111;
+}
+
+.right-Panel {
+    width: 70%;
+    height: 522px;
+    float: right;
+    background: purple;
+}
+
+.bottom-Panel {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    background: var(--bottom-panel);
+}
+
+.bottom-text {
+    font-size: 15px;
+}
+
+.bp-Set-Container {
+    width: 12.5%;
+    height: inherit;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-Panel {
+    margin: auto;
+    text-align: center;
+    float: left;
+    width: 30%;
+    height: 522px;
+    background: var(--left-panel);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.mode-tab {
+    height: 11%;
+}
+
+.mode-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: var(--Mode-container); */
+    /*clip-path: polygon(0% 0%, 30% 100%, 30% 95%, 2% 5%, 98% 5%, 70% 95%, 30% 95%, 30% 100%, 70% 100%, 100% 0% /*0% 0%, 30% 100%, 70% 100%, 100% 0%);*/
+}
+
+.mode-container > :nth-child(1) {
+    height: 100%;
+    width: 50%;
+    font-weight: bold;
+    list-style: none;
+    background: var(--left-panel);
+    clip-path: polygon(5% 5%, 60% 95%, 100% 95%, 100% 5%);
+    transition: all 0.7s ease;
+    padding-top: 20px;
+    padding-left: 80px;
+    color: var(--text-color);   
+}
+
+.mode-container > :nth-child(1).active{
+    background: linear-gradient(to right, var(--left-panel), var(--Mode-tab));
+    color: var(--left-panel);
+}
+
+.mode-container > :nth-child(2).active{
+    background: linear-gradient(to right, var(--Mode-tab), var(--left-panel));
+    color: var(--left-panel);
+}
+
+
+.mode-container > :nth-child(1):hover{
+    background: linear-gradient(to right, var(--left-panel), var(--Mode-tab));
+    color: var(--left-panel);
+}
+
+.mode-container > :nth-child(2):hover{
+    background: linear-gradient(to right, var(--Mode-tab), var(--left-panel));
+    color: var(--left-panel);
+}
+
+.mode-container > :nth-child(2) {
+    height: 100%;
+    width: 50%;
+    background: var(--left-panel);
+    clip-path: polygon(5% 5%, 5% 95%, 40% 95%, 95% 5%);
+    font-weight: bold;
+    list-style: none;
+    transition: all 0.7s ease;
+    padding-top: 20px;
+    padding-right: 60px;
+    color: var(--text-color);
+}
+
+.plot-viewer {
+    font-weight: bold;
+    font-size: large;
+}
+
+.tab-content {
+    height: 450px;
+}
+
+.react-switch {
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.styled-checkbox {
+    display:inline-block;
+    width:25px;
+    height:19px;
+}
+
+.styled-checkbox{
+    display:inline-block;
+    width:25px;
+    height:19px;
+    accent-color: #FF4040;
+}
+
+.tour-container {
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+}
+
+.tour-btn{
+    height: 80px;
+    width: 80px;
+    background: url('../components/Icons/Alux.svg') no-repeat right;
+    background-color: transparent;
+    border-width: 0px;
+    background-size: 100%;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-radius: 40px;
+}
+
+.tour-btn:hover{
+    animation-play-state: paused;   
+};
+
+/* In development */
+@keyframes alux {
+    25% { background: url('../components/Icons/Alux_on.svg') no-repeat right;}
+    50% { background: url('../components/Icons/Alux.svg') no-repeat right; }
+    75% { background: url('../components/Icons/Alux_on.svg') no-repeat right;}
+    100% { background: url('../components/Icons/Alux.svg') no-repeat right; }
+}
+
+.bounce-5 {
+    animation-name: bounce-5;
+    animation-timing-function: ease;
+}
+@keyframes bounce-5 {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-100px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    57%  { transform: scale(1,1)    translateY(-7px); }
+    64%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
