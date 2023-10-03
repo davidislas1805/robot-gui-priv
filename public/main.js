@@ -2,31 +2,31 @@ const path = require('path');
 const url = require('url');
 const {app, BrowserWindow, ipcMain, Menu} = require('electron');
 
-process.env.NODE_ENV = 'production';
+// process.env.NODE_ENV = 'production';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
 let robotWindow;
 
 function createWindow() {
-  // Create the browser window.
+  // Create the browser window.h
   robotWindow = new BrowserWindow({
     width: 1200,
-    height: 600,
+    height: isMac ? 600 : 621,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, './preload.js')
-    },
+    }, 
     resizable: false,
-    title: "K-AB"
-    // icon: path.join(__dirname, 'assets/icons/mac/icon_original.icns')
+    title: "K-AB",
+    icon: path.join(__dirname, '../public/icon.png')
   });
 
   // and load the index.html of the app.
   // win.loadFile("index.html"); 
   robotWindow.loadURL(
     isDev
-      ? 'http://localhost:3000'
+      ? 'http://192.168.1.176:3000'
       : `file://${path.join(__dirname, 'index.html')}`
   );
   // Open the DevTools.
@@ -80,5 +80,14 @@ const menu = [
         accelerator: 'CmdOrCtrl+Q'
       }
     ]
-  }
+  },
+  ...(!isMac ? [{
+    label: 'Help',
+    submenu: [
+      {
+        label: 'About',
+        click: () => robotWindow.send('show-about') 
+      }
+    ]
+  }]: [])
 ];

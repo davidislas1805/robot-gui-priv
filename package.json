@@ -9,7 +9,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "electronmon": "^2.0.2",
     "plotly.js": "^2.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron:serve": "concurrently -k \"BROWSER=none npm start\" \"wait-on http://localhost:3000#/home && electronmon .\"",
+    "start-electron": "electronmon .",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://192.168.1.176:3000 && electronmon .\"",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js"
   },
@@ -50,15 +50,20 @@
     ]
   },
   "devDependencies": {
-    "electron": "^25.3.2",
+    "electronmon": "^2.0.2",
     "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^25.3.2",
     "electron-builder": "^24.6.4",
     "wait-on": "^7.0.1"
   },
   "build": {
     "appId": "com.electron.myapp",
     "productName": "K-AB",
-    "files": ["build/**/*", "node_modules/**/*"],
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
     "directories": {
       "buildResources": "public"
     },
