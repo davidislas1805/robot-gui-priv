@@ -19,7 +19,7 @@ let viewer_data = [];
 window.ipcRenderer.on('show-about', () => {
   const package_data = require('../../../package.json');
   
-  window.alert(`${package_data.name} \n version: ${package_data.version}`);
+  window.alert(`${package_data.name}\nversion: ${package_data.version}`);
 });
 
 function MainWindow() {

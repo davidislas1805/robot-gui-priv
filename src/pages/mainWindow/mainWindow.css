@@ -94,7 +94,8 @@
     transition: all 0.7s ease;
     padding-top: 20px;
     padding-left: 80px;
-    color: var(--text-color);   
+    color: var(--text-color);
+    cursor: pointer;   
 }
 
 .mode-container > :nth-child(1).active{
@@ -129,6 +130,7 @@
     padding-top: 20px;
     padding-right: 60px;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .plot-viewer {
