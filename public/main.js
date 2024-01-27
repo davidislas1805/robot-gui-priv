@@ -2,7 +2,7 @@ const path = require('path');
 const url = require('url');
 const {app, BrowserWindow, ipcMain, Menu} = require('electron');
 
-process.env.NODE_ENV = 'production';
+// process.env.NODE_ENV = 'production';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
@@ -50,6 +50,10 @@ app.whenReady().then( () => {
       createWindow();
     }
   });
+});
+
+ipcMain.handle('testing toast',  async(e) => {
+  return("Hello from main.js");
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
