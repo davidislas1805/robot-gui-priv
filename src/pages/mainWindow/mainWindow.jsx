@@ -1,11 +1,11 @@
 import "./mainWindow.css"
-import {base_link_length,link1_length, link2_length, link3_length, link4_length, link5_length, WORLD_FRAME, LAYOUT, CONFIG} from "../components/utilities3D/constThreeDParams.js"
-import ROBOT_ARM_3D from "../components/utilities3D/mesh_robot/robotArm3D";
+import {base_link_length,link1_length, link2_length, link3_length, link4_length, link5_length, WORLD_FRAME, LAYOUT, CONFIG} from "../components/lib/utilities3D/constThreeDParams.js"
+import ROBOT_ARM_3D from "../components/lib/utilities3D/mesh_robot/robotArm3D.js";
 import Plot from 'react-plotly.js';
 import { useState } from 'react';
-import TabDK from "../components/tabDK";
-import TabIK from "../components/tabIK";
-import StyledSwitch from "../components/styledSwitch";
+import TabDK from "../components/Tabs/tabDK.jsx";
+import TabIK from "../components/Tabs/tabIK.jsx";
+import StyledSwitch from "../components/SliderAndSwitch/styledSwitch.jsx";
 import { useTour } from "@reactour/tour";
 import { useEffect } from "react";
 
