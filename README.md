@@ -15,4 +15,4 @@ or directly controlling the Tool Center Point position and orientaiton.
 
 This GUI is a project in progress and new functionalities and optimizations will be on the way. I am open to suggestions so feel free to make them and thank you for trying it.
 
-*This app was built using electron and react, along with the react-plotlyjs pluging for rendering the robot.*
+*This app was built using electron and react, along with the react-plotlyjs pluging for rendering the robot, this version also features serial comminucation and user feedback.*
