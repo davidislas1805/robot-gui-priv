@@ -100,7 +100,13 @@ export default function TabIK({robotHandler, scene_const, updateHook, switchJF})
     }
 
     const sendMatrix = () => {
-        window.ipcRenderer.send('send-HT', [tcp_rot, tcp_target_pos]);
+        let validAngles = 0;
+        computed_forward_angles.forEach((value) => {
+            value.forEach((element) =>{ 
+                validAngles = element.find((angle) => isNaN(angle));
+            });
+        });
+        if(validAngles === undefined) window.ipcRenderer.send('send-HT', [tcp_rot, tcp_target_pos]);
     };
     
     useEffect(() => {
