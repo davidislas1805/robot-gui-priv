@@ -12,7 +12,7 @@ either in its' joint variables
     <footer>direct kinematics mode preview</footer>
 </div>
 
-
+<br>
 or directly controlling the Tool Center Point position and orientaiton
 <p align="center">
     <img src="./readme_media/IK_seq_g.gif"/>
